@@ -22,11 +22,11 @@ function App() {
   contacts and appointments
   */
   const addContact = (item) => {
-    setContacts(prev => {return [...prev, item]});
+    setContacts(prev => [...prev, item]);
   }
 
   const addAppointment = (item) => {
-    setAppointments(prev => {return [...prev, item]});
+    setAppointments(prev => [...prev, item]);
   }
 
   return (
@@ -39,7 +39,7 @@ function App() {
           Appointments
         </NavLink>
       </nav>
-      <main>
+      <main>  
         <Switch>
           <Route exact path="/">
             <Redirect to={ROUTES.CONTACTS} />
@@ -48,7 +48,7 @@ function App() {
             <ContactsPage contacts = {contacts} addContact = {addContact}/>
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            <AppointmentsPage appointments = {appointments} addAppointment = {addAppointment}/>
+            <AppointmentsPage appointments = {appointments} addAppointment = {addAppointment} contacts = {contacts}/>
           </Route>
         </Switch>
       </main>

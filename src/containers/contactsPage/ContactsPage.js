@@ -2,13 +2,13 @@ import React, {useState, useEffect} from "react";
 import {ContactForm} from '../../components/contactForm/ContactForm';
 import {TileList} from '../../components/tileList/TileList';
 
-export const ContactsPage = () => {
+export const ContactsPage = (props) => {
   /*
   Define state variables for 
   contact info and duplicate check
   */
-  const contacts = this.props.contacts;
-  const addContact = this.props.addContact;
+  const contacts = props.contacts;
+  const addContact = props.addContact;
 
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -51,7 +51,7 @@ export const ContactsPage = () => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList contacts={contacts}/>
+        <TileList list={contacts}/>
       </section>
     </div>
   );
